@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div id="game">
+            <h2 id="word-display">Word: </h2>
+            <h3>Guessed Letters: <span id="guessed-letters"></span></h3>
+            <h3>Guesses Left: <span id="guesses-left"></span></h3>
+            <input type="text" id="letter-input" maxlength="1" placeholder="Enter a letter">
+            <button id="guess-button">Guess</button>
+            <button id="hint-button">Hint</button>
+        </div>
+        <div id="score">
+            <h3>Score: <span id="score-value"></span></h3>
+        </div>
+        <div id="message"></div>
+        <div id="category-selection">
+            <h3>Select Category:</h3>
+            <select id="category-select">
+                {% for category in categories %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+            <h3>Select Difficulty:</h3>
+            <select id="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="start-game-button">Start Game</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

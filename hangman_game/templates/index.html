@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hangman Game</h1>
+        <div id="menu">
+            <label for="category">Choose Category:</label>
+            <select id="category">
+                <option value="Animals">Animals</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Countries">Countries</option>
+                <option value="Sports">Sports</option>
+            </select>
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy (8 guesses)</option>
+                <option value="medium">Medium (6 guesses)</option>
+                <option value="hard">Hard (4 guesses)</option>
+            </select>
+            <button id="startBtn">Start Game</button>
+        </div>
+        <div id="game" style="display:none;">
+            <div id="score">Score: 0</div>
+            <div id="highscore" style="color:#388e3c; font-size:1em; margin-bottom:10px;">High Score: 0</div>
+            <div id="hangman-drawing" style="height:120px;margin:0 auto 10px auto;"></div>
+            <div id="word"></div>
+            <div id="guesses">Guesses left: <span id="guessesLeft"></span></div>
+            <button id="hintBtn" style="margin-bottom:10px;display:none;">Hint</button>
+            <div id="keyboard"></div>
+            <div id="result" style="margin-bottom:10px;"></div>
+            <button id="restartBtn" style="display:none; margin-bottom:10px;">Play Again</button>
+            <div id="fact" style="margin-top:8px; min-height:32px; color:#8e24aa; font-style:italic;"></div>
+        </div>
+    </div>
+    <audio id="winSound" src="/static/win.mp3"></audio>
+    <audio id="loseSound" src="/static/lose.mp3"></audio>
+    <audio id="clickSound" src="/static/click.mp3"></audio>
+    <script src="/static/script.js"></script>
+</body>
+</html>
